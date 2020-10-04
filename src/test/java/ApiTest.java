@@ -44,11 +44,12 @@ public class ApiTest {
         Assert.assertTrue(avatars.stream().anyMatch(x -> x == UserAvatar), "Аватары не совпадают");
     }
 
-   /* Тест 2.1
+   /*
+   Тест 2.1
             1.Используя сервис https://reqres.in/ протестировать регистрацию пользователя в системе
             2.Необходимо создание 2 тестов:
-            - успешная регистрация
-            - регистрация с ошибкой из-за отсутствия пароля
+            2.1 успешная регистрация
+            2.2 регистрация с ошибкой из-за отсутствия пароля
     */
     @Test
     @Description(value ="успешная регистрация")
@@ -71,11 +72,15 @@ public class ApiTest {
         id = jsonResponse.get("id");
         Assert.assertTrue(id == 4);
         /*  Проверка по token
+        можно использовать одновременно обе проверки
         token = jsonResponse.get("token");
         Assert.assertEquals(token,"QpwL5tke4Pnpja7X4");
          */
     }
-
+    
+    /*
+    Тест 2.2
+    */
     @Test
     @Description(value ="неуспешная регистрация")
     public void unSucRegUsers() {

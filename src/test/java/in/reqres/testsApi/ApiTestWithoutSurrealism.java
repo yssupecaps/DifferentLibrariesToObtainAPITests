@@ -1,3 +1,6 @@
+package in.reqres.testsApi;
+
+import in.reqres.specs.Specifications;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import jdk.jfr.Description;
@@ -13,7 +16,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class ApiTest {
+public class ApiTestWithoutSurrealism {
 
     /*
     Тест 1
@@ -22,7 +25,7 @@ public class ApiTest {
     */
     @Test
     public void checkUsersAvatars() {
-        Specifications.installSpecification(Specifications.requestSpec(),Specifications.responseSpecOK2());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
         List<String> avatars;
         String UserAvatar;
         Response response = given()
@@ -54,7 +57,7 @@ public class ApiTest {
     @Test
     @Description(value ="успешная регистрация")
     public void sucRegUsers() {
-        Specifications.installSpecification(Specifications.requestSpec(),Specifications.responseSpecOK2());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
         Integer id;
         //String token;
         Map<String, String> data = new HashMap<String, String>();
@@ -84,7 +87,7 @@ public class ApiTest {
     @Test
     @Description(value ="неуспешная регистрация")
     public void unSucRegUsers() {
-        Specifications.installSpecification(Specifications.requestSpec(),Specifications.responseSpecError4());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecError4());
         String error;
         Map<String, String> data = new HashMap<>();
         data.put("email", "sydney@file");
@@ -107,7 +110,7 @@ public class ApiTest {
     */
     @Test
     public void checkSortDataByYears() {
-        Specifications.installSpecification(Specifications.requestSpec(),Specifications.responseSpecOK2());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
         List<String> years;
         Response response = given()
                 .when()

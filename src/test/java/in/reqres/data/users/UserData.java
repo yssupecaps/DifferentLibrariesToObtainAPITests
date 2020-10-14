@@ -12,11 +12,7 @@ public class UserData {
         super();
     }
 
-    public UserData(Integer id,
-                    String email,
-                    String first_name,
-                    String last_name,
-                    String avatar) {
+    public UserData(Integer id, String email, String first_name, String last_name, String avatar) {
         this.id = id;
         this.email = email;
         this.first_name = first_name;
@@ -63,5 +59,4 @@ public class UserData {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
 }

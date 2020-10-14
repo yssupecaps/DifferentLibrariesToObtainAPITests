@@ -4,7 +4,7 @@ import in.reqres.data.colors.Data;
 import in.reqres.data.registration.Register;
 import in.reqres.data.registration.SuccessUserReg;
 import in.reqres.data.registration.UnsuccessUserReg;
-import in.reqres.data.users.UserResourse;
+import in.reqres.data.users.UserData;
 import in.reqres.specs.Specifications;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -25,28 +25,25 @@ public class ApiTestWithSurrealism {
        Ожидаю увидеть задание по  API именно в нём.
    */
 
-
+//проверка на совпадение названий аватаров
    @Test
    public void checUserAvatars(){
-
+      String nameFile="128.jpg";
       Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
-      List<UserResourse> userResourses = given()
+      List<UserData> userAvatar = given()
             .when()
             .get("api/users?page=2")
             .then()
             .log().body()
-            .extract().body().jsonPath().getList("avatar");
-    /*
-
-       .extract().body().jsonPath().getList("avatar", PeopleData.class);
-      avatarsPeople.stream().forEach(x-> System.out.println(x.getAvatar()));
-
-      List<String> realPeopleAvatars =avatarPeople.stream().map(PeopleData::getAvatar).collect(Collectors.toList());
-      List sortedDataYears = new ArrayList(dataYears);*/
-
+            .extract().body().jsonPath().getList("avatar",UserData.class);
+      List<String> realPeopleAvatars =userAvatar.stream()
+              .map(UserData::getAvatar)
+              .collect(Collectors.toList());
+      Assert.assertTrue(realPeopleAvatars.stream()
+              .allMatch(value -> value.contains("128.jpg")), "не совпадают");
    }
 
-   // успешная регистрация
+   // проверка успешной регистрации
    @Test
    public void sucRegistrUser() {
       Integer UserId=4;

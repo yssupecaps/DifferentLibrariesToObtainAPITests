@@ -4,7 +4,7 @@ import in.reqres.data.common.Ad;
 
 import java.util.List;
 
-public class Resourse {
+public class Resource {
 
     private Integer page;
     private Integer per_page;
@@ -13,15 +13,15 @@ public class Resourse {
     List<Data> data;
     private Ad ad;
 
-    public Resourse() {
+    public Resource() {
         super();
     }
 
-    public Resourse(Integer page,
-                   Integer per_page,
-                   Integer total, Integer total_pages,
-                   List<Data> data,
-                   Ad ad) {
+    public Resource(Integer page,
+                    Integer per_page,
+                    Integer total, Integer total_pages,
+                    List<Data> data,
+                    Ad ad) {
         this.page = page;
         this.per_page = per_page;
         this.total = total;

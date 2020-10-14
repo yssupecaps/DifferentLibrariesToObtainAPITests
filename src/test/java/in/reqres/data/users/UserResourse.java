@@ -9,7 +9,7 @@ public class UserResourse {
     private Integer per_page;
     private Integer total;
     private Integer total_pages;
-    List<UserData> data;
+    List<UserData> dataUser;
     private Ad ad;
 
     public UserResourse() {
@@ -20,13 +20,13 @@ public class UserResourse {
                         Integer per_page,
                         Integer total,
                         Integer total_pages,
-                        List<UserData> data,
+                        List<UserData> dataUser,
                         Ad ad) {
         this.page = page;
         this.per_page = per_page;
         this.total = total;
         this.total_pages = total_pages;
-        this.data = data;
+        this.dataUser = dataUser;
         this.ad = ad;
     }
 
@@ -63,11 +63,11 @@ public class UserResourse {
     }
 
     public List<UserData> getData() {
-        return data;
+        return dataUser;
     }
 
     public void setData(List<UserData> data) {
-        this.data = data;
+        this.dataUser = data;
     }
 
     public Ad getAd() {

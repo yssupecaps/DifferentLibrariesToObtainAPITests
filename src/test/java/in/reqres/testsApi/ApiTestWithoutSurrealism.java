@@ -44,7 +44,8 @@ public class ApiTestWithoutSurrealism {
         avatars = jsonResponse.get("data.avatar");
         //нумерация начинается с 0
         UserAvatar = avatars.get(0);
-        Assert.assertTrue(avatars.stream().anyMatch(x -> x == UserAvatar), "Аватары не совпадают");
+        Assert.assertTrue(avatars.stream()
+                .allMatch(value -> value.contains("128.jpg")), "не совпадают");
     }
 
    /*

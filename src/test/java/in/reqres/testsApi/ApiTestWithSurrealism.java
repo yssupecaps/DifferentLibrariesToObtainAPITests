@@ -43,6 +43,7 @@ public class ApiTestWithSurrealism {
               .allMatch(value -> value.contains("128.jpg")), "не совпадают");
    }
 
+   
    // проверка успешной регистрации
    @Test
    public void sucRegistrUser() {

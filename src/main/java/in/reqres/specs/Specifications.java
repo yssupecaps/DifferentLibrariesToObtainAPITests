@@ -12,6 +12,8 @@ import static io.restassured.http.ContentType.JSON;
 
 public class Specifications extends Reqres_Data {
 
+
+
     public static RequestSpecification requestSpec(){
         RequestSpecification requestSpecification = new RequestSpecBuilder()
                 .setBaseUri(REQRES_URL)

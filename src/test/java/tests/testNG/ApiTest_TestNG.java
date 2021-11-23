@@ -1,22 +1,23 @@
-package in.reqres.tests.testNG;
+package tests.testNG;
 
+
+import in.reqres.data.*;
 import in.reqres.pojo.colors.Data;
 import in.reqres.pojo.registration.Register;
 import in.reqres.pojo.registration.SuccessUserRegister;
 import in.reqres.pojo.registration.UnsuccessUserRegister;
 import in.reqres.pojo.users.UserData;
-import in.reqres.data.Reqres_Data;
-import io.qameta.allure.Description;
 import io.qameta.allure.Flaky;
-import org.testng.annotations.Test;
-import org.testng.xml.dom.Tag;
+import jdk.jfr.Description;
+import org.testng.annotations.*;
+import org.testng.xml.dom.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static in.reqres.specs.Specifications.*;
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 import static org.testng.Assert.*;
 
 public class ApiTest_TestNG extends Reqres_Data {

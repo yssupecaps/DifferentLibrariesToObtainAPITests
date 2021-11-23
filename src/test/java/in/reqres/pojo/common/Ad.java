@@ -1,4 +1,4 @@
-package in.reqres.data.common;
+package in.reqres.pojo.common;
 
 public class Ad {
     private String company;

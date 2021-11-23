@@ -1,9 +1,9 @@
-package in.reqres.testsApi;
+package in.reqres.tests.testNG;
 
 import in.reqres.specs.Specifications;
+import io.qameta.allure.Description;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class ApiTestWithoutSurrealism {
+public class ApiTest_TestNG_Simple {
 
     /*
     Тест 1
@@ -25,7 +25,7 @@ public class ApiTestWithoutSurrealism {
     */
     @Test
     public void checkUsersAvatars() {
-        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK200());
         List<String> avatars;
         String UserAvatar;
         Response response = given()
@@ -43,7 +43,7 @@ public class ApiTestWithoutSurrealism {
         JsonPath jsonResponse = response.jsonPath();
         avatars = jsonResponse.get("data.avatar");
         Assert.assertTrue(avatars.stream()
-                .allMatch(value -> value.contains("128.jpg")), "не совпадают");
+                .allMatch(value -> value.contains("image.jpg")), "не совпадают");
     }
 
    /*
@@ -56,7 +56,7 @@ public class ApiTestWithoutSurrealism {
     @Test
     @Description(value ="успешная регистрация")
     public void sucRegUsers() {
-        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK200());
         Integer id;
         //String token;
         Map<String, String> data = new HashMap<String, String>();
@@ -86,7 +86,7 @@ public class ApiTestWithoutSurrealism {
     @Test
     @Description(value ="неуспешная регистрация")
     public void unSucRegUsers() {
-        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecError4());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecError400());
         String error;
         Map<String, String> data = new HashMap<>();
         data.put("email", "sydney@file");
@@ -109,7 +109,7 @@ public class ApiTestWithoutSurrealism {
     */
     @Test
     public void checkSortDataByYears() {
-        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK2());
+        Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpecOK200());
         List<String> years;
         Response response = given()
                 .when()

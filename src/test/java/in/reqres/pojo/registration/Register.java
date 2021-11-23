@@ -1,8 +1,13 @@
-package in.reqres.data.registration;
+package in.reqres.pojo.registration;
 
-public class Register {
+import com.fasterxml.jackson.annotation.JsonProperty;
+import in.reqres.pojo.common.ReqresRequest;
 
+public class Register implements ReqresRequest {
+
+    @JsonProperty("email")
     private String email;
+    @JsonProperty("password")
     private String password;
 
     public Register() {

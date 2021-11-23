@@ -1,17 +1,17 @@
-package in.reqres.data.registration;
+package in.reqres.pojo.registration;
 
-public class UnsuccessUserReg extends Register {
+public class UnsuccessUserRegister extends Register {
 
     private String error;
 
-    public UnsuccessUserReg(String error,
-                            String email,
-                            String password) {
+    public UnsuccessUserRegister(String error,
+                                 String email,
+                                 String password) {
         super(email,password);
         this.error = error;
     }
 
-    public UnsuccessUserReg() {
+    public UnsuccessUserRegister() {
     }
 
     public String getError() {

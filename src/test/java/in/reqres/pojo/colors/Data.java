@@ -1,4 +1,4 @@
-package in.reqres.data.colors;
+package in.reqres.pojo.colors;
 
 public class Data {
     private Integer id;

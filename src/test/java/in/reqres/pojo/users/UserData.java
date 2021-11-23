@@ -1,4 +1,4 @@
-package in.reqres.data.users;
+package in.reqres.pojo.users;
 
 public class UserData {
 

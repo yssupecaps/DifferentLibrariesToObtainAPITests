@@ -1,6 +1,6 @@
-package in.reqres.data.colors;
+package in.reqres.pojo.colors;
 
-import in.reqres.data.common.Ad;
+import in.reqres.pojo.common.Ad;
 
 import java.util.List;
 

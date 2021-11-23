@@ -1,6 +1,6 @@
-package in.reqres.data.users;
+package in.reqres.pojo.users;
 
-import in.reqres.data.common.Ad;
+import in.reqres.pojo.common.Ad;
 
 import java.util.List;
 

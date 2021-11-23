@@ -1,19 +1,19 @@
-package in.reqres.data.registration;
+package in.reqres.pojo.registration;
 
-public class SuccessUserReg extends Register {
+public class SuccessUserRegister extends Register  {
     private Integer id;
     private String token;
-  ;
 
 
-    public SuccessUserReg() {
+
+    public SuccessUserRegister() {
         super();
     }
 
-    public SuccessUserReg(String email,
-                          String password,
-                          Integer id,
-                          String token) {
+    public SuccessUserRegister(String email,
+                               String password,
+                               Integer id,
+                               String token) {
         super(email,password);
         this.id = id;
         this.token = token;
